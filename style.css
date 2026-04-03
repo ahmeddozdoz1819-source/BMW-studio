@@ -1,0 +1,841 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --black: #0A0A0A;
+  --dark-blue: #0A2540;
+  --bmw-blue: #0066B1;
+  --white: #FFFFFF;
+  --silver: #E5E5E5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000;
+  color: var(--white);
+  font-family: Arial, sans-serif;
+}
+.B{
+  color: #0066B1;
+  font-weight: bold;
+  font-size: 20px;
+}
+.M{
+  color: #031E49;
+  font-weight: bold;
+  font-size: 20px;
+}
+.W{
+  color: #CE1126;
+  font-weight: bold;
+  font-size: 20px;
+}
+.B,.M,.W{
+  display: inline-block;
+  transition: transform 0.5s ease;
+}
+.B:hover,.M:hover,.W:hover{
+  transform: scale(1.2);
+}
+.discription{
+  font-size: 18px;
+  line-height: 28px;
+}
+h1,h2{
+  font-family: Audiowide, Arial, sans-serif;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hr-between-pages{
+  width: 100%;
+  height: 1rem;
+  border: none;
+  background: linear-gradient(
+    140deg,
+    var(--bmw-blue),
+    #031E49,
+    #CE1126,
+    var(--black),
+    #000,
+    var(--black),
+    #CE1126,
+    #031E49
+  );
+  background-size: 150% 150%;
+  animation: livelyGradient 18s ease infinite;
+  filter: drop-shadow(0 0 5px var(--black)) brightness(1.2);
+}
+ul{
+  list-style: none;
+}
+a{
+  text-decoration: none;
+}
+@keyframes livelyGradient {
+  0%   { background-position: 0% 50%; }
+  25%  { background-position: 50% 50%; }
+  50%  { background-position: 100% 50%; }
+  75%  { background-position: 50% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Home start */
+#HOME nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 10;
+}
+
+#HOME nav .container{
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px;
+}
+#HOME nav .container a{
+  text-decoration: none;
+  font-size: 22px;
+  color: #FFF;
+  filter: drop-shadow(2px 2px 1px rgba(135, 206, 235,0.5));
+  font-weight: 700;
+}
+#HOME nav .container .left-side h1 a span{
+  font-size: 40px;
+}
+#HOME nav .container .right-side{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+#HOME nav .container .right-side a{
+  display: inline-block;
+  color: #EEE;
+  transition: all 0.4s ease;
+}
+#HOME nav .container .right-side a:hover{
+  
+  background: linear-gradient(90deg, #00a2ed 0%, #16156e 50%, #e7222e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(1.1) rotateX(10deg) rotateY(-10deg);
+}
+#HOME main{
+  width: 100%;
+  height: 120vh;
+}
+
+#HOME main .main-vedio{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+  z-index: 1;
+  overflow: hidden;
+}
+#HOME main .main-vedio::after{
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;  
+}
+#HOME main .main-vedio video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-position: center center;
+  object-fit: contain;  
+  
+}
+#HOME main .main-vedio .container{
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 8rem 3rem 0;
+  z-index: 3;
+}
+#HOME main .main-vedio .container img{
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.7));
+}
+#HOME main .main-vedio .container .bmw{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 15rem;
+}
+#HOME main .main-vedio .container .bmw img{
+  width: 150px;
+  transition: transform 0.5s ease-in-out;
+}
+#HOME main .main-vedio .container .bmw img:hover{
+  transform: rotate(360deg);
+}
+#HOME main .main-vedio .container .bmw h2{
+  color: #000;
+  font-size: 42px;
+  font-weight: bold;
+  filter: drop-shadow(0 0 2px #FFF);
+}
+#HOME main .main-vedio .container .bmw h2 .B{
+  color: #0066B3;
+  font-size: 50px;
+}
+#HOME main .main-vedio .container .bmw h2 .M{
+  color: #031E49;
+  font-size: 50px;
+}
+#HOME main .main-vedio .container .bmw h2 .W{
+  color: #CE1126;
+  font-size: 50px;
+}
+#HOME main .main-vedio .container .bmw-types{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  font-size: 25px;
+}
+#HOME main .main-vedio .container .bmw-types .X{
+  font-size: 35px;
+  font-weight: bold;
+  color: #FFF;
+  filter: drop-shadow(0 0 3px #FFF);
+}
+#HOME main .main-vedio .container .bmw-types img{
+  width: 250px;
+}
+#HOME main .main-vedio .container .discription{
+  font-size: 22px;
+  text-align: center;
+}
+#HOME main .main-vedio .container ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+#HOME main .main-vedio .container ul li a i{
+  font-size: 50px;
+  display: inline-block;
+  transition: 155ms ease;
+}
+#HOME main .main-vedio .container ul li a i:hover{
+  transform: scale(1.2);
+}
+#HOME main .main-vedio .container ul .instagram a i{
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285ae1 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(2px 2px 2px rgba(50, 50, 255, 0.5));
+}
+#HOME main .main-vedio .container ul .tiktok a i{
+  color: #000;
+  filter: drop-shadow(2px 2px rgba(255, 50 ,50 ,0.6));
+}
+#HOME main .main-vedio .container ul .youtube a i{
+  color: #CE1126;
+  filter: drop-shadow(2px 2px 2px rgba(255,0,0,0.6));
+}
+#HOME main .main-vedio .container ul .facebook a i{
+  color: #1877F2;
+  filter: drop-shadow(2px 2px 2px var(--bmw-blue));
+}
+/* Home end */
+
+/* header responsivity start */
+@media(max-width: 786px){
+  #HOME nav .container{
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media(max-width: 540px){
+  #HOME main .main-vedio .container .bmw-types img{
+    width: 200px;
+  }
+  #HOME main .main-vedio .container .bmw img{
+    width: 100px;
+  }
+}
+@media(max-width: 450px){
+  #HOME nav .container{
+    padding: 15px;
+  }
+  #HOME nav .container a{
+    font-size: 18px;
+  }
+  #HOME nav .container .left-side h1 a span{
+    font-size: 34px;
+  }
+  #HOME main .main-vedio .container .bmw-types{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 25px;
+  }
+  #HOME main .main-vedio .container .discription{
+    font-size: 18px;
+  }
+  #HOME main .main-vedio .container ul li a i{
+    font-size: 40px;
+  }
+}
+@media(max-width: 375px){
+  #HOME main .main-vedio .container .bmw-types img{
+    width: 150px;
+  }
+  #HOME main .main-vedio .container .bmw img{
+    width: 80px;
+  }
+  #HOME main .main-vedio .container .bmw h2{
+    font-size: 35px;
+  }
+  #HOME main .main-vedio .container .bmw h2 .B,
+  #HOME main .main-vedio .container .bmw h2 .M,
+  #HOME main .main-vedio .container .bmw h2 .W{
+    font-size: 35px;
+  }
+  #HOME nav .container{
+    padding: 15px;
+  }
+  #HOME nav .container a{
+    font-size: 18px;
+  }
+  #HOME nav .container .left-side h1 a span{
+    font-size: 34px;
+  }
+  #HOME main .main-vedio .container .bmw-types{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 25px;
+  }
+  #HOME main .main-vedio .container .discription{
+    font-size: 16px;
+  }
+  #HOME main .main-vedio .container ul li a i{
+    font-size: 35px;
+  }
+}
+/* header responsivity end */
+
+/* about start */
+#ABOUT{
+  height: max-content;
+  padding-bottom: 3rem;
+  width: 100%;
+  background-color: #000;
+  background-image:
+    radial-gradient(at 20% 10%, grey -2000px, transparent 50%),
+    radial-gradient(at 80% 50%, var(--dark-blue) -300px, transparent 40%),
+    radial-gradient(at 15% 85%, darkred -500px, transparent 35%),
+    radial-gradient(at 90% 90%, purple -350px, transparent 35%);
+}
+#ABOUT .container{
+  gap: 5rem;
+}
+#ABOUT .container .header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  font-family: Audiowide, Arial, sans-serif;
+}
+#GARAGE .container .header hr,
+#ABOUT .container .header hr{
+  margin-top: -30px;
+  width: 250px;
+  height: 3px;
+  background-color: var(--bmw-blue);
+  border: none;
+}
+#ABOUT .container .header .header-content{
+  padding: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  filter: drop-shadow(0 0 5px var(--dark-blue));
+  perspective: 1000px;
+}
+#ABOUT .container .header .header-content h2{
+  font-size: 40px;
+}
+#ABOUT .container .header .header-content h2 .B,
+#ABOUT .container .header .header-content h2 .M,
+#ABOUT .container .header .header-content h2 .W{
+  font-size: 50px;
+}
+#ABOUT .container .header .header-content img{
+  width: 90px;
+  transition: transform 1s ease;
+}
+#ABOUT .container .header .header-content img:hover{
+  transform: rotate3d(1,0,0,360deg);
+}
+#ABOUT .container .about1,
+#ABOUT .container .about2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+
+}
+#ABOUT .container .about-img {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+#ABOUT .container .about-img img{
+  width: 400px;
+}
+#ABOUT .container .about-img::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  box-shadow: inset 0 0 30px 15px black; 
+  pointer-events: none;
+}
+#ABOUT .container .about2 .about-img-responsivity{
+  display: none;
+}
+/* about end */
+
+/* about responsivity start*/
+@media(max-width: 786px){
+  #ABOUT .container .about1,
+  #ABOUT .container .about2{
+    flex-direction: column;
+  }
+  #ABOUT .container .about2 img{
+    display: none;
+  }
+  #ABOUT .container .about2 .about-img-responsivity{
+    display: inline;
+  }
+  #ABOUT .container .about2 .about-img-responsivity img{
+    display:inline-block;
+    width: 400px;
+  }
+}
+@media(max-width: 540px){
+  #ABOUT .container .about-img img{
+    width: 300px;
+  }
+  #ABOUT .container .about2 img{
+    display: none;
+  }
+  #ABOUT .container .about2 .about-img-responsivity img{
+    width: 300px;
+  }
+  #ABOUT .container .header .header-content h2{
+    font-size: 28px;
+  }
+  #ABOUT .container .header .header-content img{
+    width: 65px;
+    transition: transform 1s ease;
+  }
+  #ABOUT .container .header .header-content h2 .B,
+  #ABOUT .container .header .header-content h2 .M,
+  #ABOUT .container .header .header-content h2 .W{
+    font-size: 32px;
+  }
+}
+/* about responsivity end*/
+
+/* Mpower start */
+#Mpower{
+  height:max-content;
+  width: 100%;
+  padding-bottom: 8rem;
+  background-color: #0F0F0F;
+  position: relative;
+}
+#Mpower .bmw-wallpaper1,
+#Mpower .bmw-wallpaper{
+  overflow: hidden;
+}
+#Mpower .bmw-Mperformance{
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+#Mpower .bmw-Mperformance img{
+  width: 40rem;
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 70% , transparent 100%);
+}
+#Mpower .bmw-wallpaper1 img{
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: linear-gradient(to top, black 70%, transparent 100%);
+  mask-image: linear-gradient(to top , black 70% , transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
+  
+}
+#Mpower .bmw-wallpaper img{
+  width: 100%;
+  height: auto;
+  -webkit-mask-image: linear-gradient(to bottom , black 70%, transparent 100%);
+  mask-image: linear-gradient(to bottom , black 70% , transparent 100%);
+}
+#Mpower .mid-side,
+#Mpower .container{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: -7rem;
+}
+#Mpower .container .top-side{
+  width: 100%;
+  color: #FFF;
+}
+#Mpower .mid-side .container  .r-and-l,
+#Mpower .container .top-side .M-header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#Mpower .container .top-side .M-header .M-left-side{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+
+#Mpower .container .top-side .M-header .M-left-side span{
+  font-size: 14px;
+  font-weight: bold;
+}
+#Mpower .container .top-side .M-header .M-left-side h3{
+  font-family: Audiowide, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 100;
+}
+#Mpower .container .top-side .M-header .M-left-side .discription{
+  font-size: 16px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 500;
+}
+#Mpower .container .top-side .M-header .M-right-side{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+#Mpower .container .top-side .M-header .M-right-side img{
+  width: 200px;
+}
+#Mpower .container .top-side .M-header .M-right-side a button{
+  font-family: Audiowide, Arial;
+  font-weight: 700;
+  font-size: 15px;
+  color: #0F0F0F;
+  background-color: #1877F2;
+  border: 2px solid #1877F2;
+  padding: 10px;
+  cursor: pointer;
+  transition: 155ms ease;
+}
+#Mpower .container .top-side .M-header .M-right-side a button:hover{
+  transform: scale(1.1);
+  background-color: #fd5949;
+  color: #000;
+  border-color: #fd5949;
+}
+#Mpower .mid-side{
+  margin-top: -25rem;
+}
+#Mpower .mid-side .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 10rem;
+}
+#Mpower .mid-side .container  h3{
+  font-size: 36px;
+}
+
+#Mpower .mid-side .container  .r-and-l{
+  gap: 3rem;
+  line-height: 25px;
+}
+#Mpower .mid-side .container  .r-and-l h4{
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+#Mpower .mid-side .container  .r-and-l .p-right-side{
+  text-align: end;
+}
+/* Mpower end */
+
+/* Mpower responsivity start */
+@media(max-width:900px){
+  #Mpower{
+    height: 1650px;
+  }
+  #Mpower .mid-side{
+    margin-top: 0;
+  }
+}
+@media(max-width:540px){
+  #Mpower .bmw-Mperformance img{
+    width: 30rem;
+  }
+}
+@media(max-width:450px){
+  #Mpower{
+    height: 1750px;
+  }
+  #Mpower .bmw-Mperformance{
+    top: 50px;
+  }
+  #Mpower .bmw-Mperformance img{
+    width: 20rem;
+  }
+  #Mpower .mid-side{
+    margin-top: 15rem;
+  }
+  #Mpower .mid-side .container  .r-and-l,
+  #Mpower .container .top-side .M-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #Mpower .container .top-side .M-header{
+    text-align: center;
+    gap: 2rem;
+  }
+  #Mpower .container .top-side .M-header .M-left-side h3{
+    font-size: 30px;
+    font-weight: 100;
+  }
+  #Mpower .container .top-side .M-header .M-left-side .discription{
+    font-size: 14px;
+    font-weight: 300;
+  }
+  #Mpower .mid-side .container  h3{
+    font-size: 32px;
+  }
+  #Mpower .container .top-side .M-header .M-right-side img{
+    width: 150px;
+  }
+}
+@media(max-width:415px){
+  #Mpower{
+    height: 1750px;
+  }
+  #Mpower .bmw-Mperformance{
+    top: 50px;
+  }
+  #Mpower .bmw-Mperformance img{
+    width: 20rem;
+  }
+  #Mpower .mid-side{
+    margin-top: 18rem;
+  }
+  #Mpower .mid-side .container  .r-and-l,
+  #Mpower .container .top-side .M-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #Mpower .container .top-side .M-header{
+    text-align: center;
+    gap: 2rem;
+  }
+  #Mpower .container .top-side .M-header .M-left-side h3{
+    font-size: 20px;
+    font-weight: 100;
+  }
+  #Mpower .container .top-side .M-header .M-left-side .discription{
+    font-size: 14px;
+    font-weight: 300;
+  }
+  #Mpower .mid-side .container  h3{
+    font-size: 26px;
+  }
+  #Mpower .mid-side .container  .r-and-l h4{
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  #Mpower .container .top-side .M-header .M-right-side img{
+    width: 140px;
+  }
+}
+@media(max-width:375px){
+  #Mpower .mid-side{
+    margin-top: 20rem;
+  }
+  #Mpower .container .top-side .M-header .M-right-side img{
+    width: 130px;
+  }
+}
+/* Mpower responsivity end */
+
+/* Garage start */
+#GARAGE{
+  height: max-content;
+  position: relative;
+}
+#GARAGE .bg{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+#GARAGE .bg img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+
+}
+#GARAGE .container{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 90%;
+  max-width: 1200px;
+}
+#GARAGE .container .header span{
+  font-size: 40px;
+}
+#GARAGE .container .header{
+  font-size: 30px;
+  margin: 2rem auto 5rem;
+}
+#GARAGE .container .header hr{
+  margin-top: 0;
+}
+#GARAGE .container .garage-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 50px;
+}
+#GARAGE .container .garage-grid .card{
+  position: relative;
+  background-color: lightgray;
+  border-radius: 20px;
+  border: 0.5px solid #000;
+}
+#GARAGE .container .garage-grid .card img{
+  width: 100%;
+  transition: all 0.2s ease;
+}
+#GARAGE .container .garage-grid .card .tooltip{
+  position: absolute;
+  width: 175px;
+  height: auto;
+  padding: 5px;
+  text-align: center;
+  color: #000;
+  font-family: Audiowide ,Arial,sans-serif;
+  font-size: 18px;
+  background-color: #FFF;
+  bottom: -35px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.2s ease;
+}
+#GARAGE .container .garage-grid .card:hover img{
+  transform: scale(1.1);
+}
+#GARAGE .container .garage-grid .card:hover .tooltip{
+  opacity: 1;
+}
+/* Garage end */
+
+/* Garage responsivity start */
+@media(max-width:540px){
+  #GARAGE{
+    padding-bottom: 50rem;
+  }
+  #GARAGE .container .garage-grid{
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #GARAGE .container .garage-grid .card .tooltip{
+    opacity: 1;
+  }
+}
+@media(max-width:400px){
+  #GARAGE .container .header span{
+    font-size: 30px;
+  }
+  #GARAGE .container .header{
+    font-size: 20px;
+    margin: 2rem auto 5rem;
+  }
+  #GARAGE .container .header hr{
+    width: 200px;
+  }
+}
+/* Garage responsivity end */
+
+/* footer start */
+#footer{
+  background-color: #222;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+/* footer end */
